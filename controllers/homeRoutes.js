@@ -27,28 +27,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// router.get('/review/:id', async (req, res) => {
-//   try {
-//     const reviewData = await Review.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//       ],
-//     });
-
-//     const review = reviewData.get({ plain: true });
-
-//     res.render('review', {
-//       ...review,
-//       logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
 // Use withAuth middleware to prevent access to route
 router.get("/profile", withAuth, async (req, res) => {
   try {
@@ -96,20 +74,6 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
-//This route allows the search for a book page to link to the write a review page
-// router.get('/review', (req, res) => {
-//   res.render('review');
-// });
-
-//This route is to the review page with a book isbn
-// router.get('/review/:id', (req, res) => {
-//   const isbn13 = req.params['id'];
-//   console.log(isbn13);
-//   res.render('review');
-// });
-
-
-
 router.get('/review/:id', async (req, res) => {
   try { 
     const isbn13 = req.params['id'];
@@ -131,7 +95,6 @@ router.get('/review/:id', async (req, res) => {
     return reviewSerializedData;
   });
   const avg = reviewTotal/reviewData.length;
-  // console.log(isbn13);
   res.render('review', {
     isbn: isbn13, reviews:reviews, avgStars: avg,
     logged_in: req.session.logged_in
@@ -143,11 +106,7 @@ router.get('/review/:id', async (req, res) => {
 
 router.get('/clubs', async (req, res) => {
   try {
-    // const clubId = req.params['id'];
     const clubData = await Club.findAll({ 
-    //   where: {
-    //   id:clubId
-    // },
       include: [
         {
           model: User,
@@ -165,37 +124,6 @@ router.get('/clubs', async (req, res) => {
   console.log(err)
 }
 });
-
-// router.get('/clubs/:id', async (req, res) => {
-//   try {
-//     const clubData = await Club.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//         },
-//         {
-//           model: Comment,
-//           attributes: ['comment_text', 'date_created'],
-//         }
-//       ],
-//     });
-
-//     const club = clubData.get({ plain: true });
-
-//     res.render('club', {
-//       ...club,
-//       // logged_in: req.session.logged_in
-//     });
-//   } catch (err) {
-//     console.log(err)
-//     res.status(500).json(err);
-//   }
-// });
-
-// router.get('/clubs', (req, res) => {
-//   res.render('clubs')
-// })
 
 
 module.exports = router;

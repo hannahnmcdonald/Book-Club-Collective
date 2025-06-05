@@ -28,7 +28,6 @@ Comment.init(
     },
     date_created: {
       type: DataTypes.DATE,
-      // allowNull: false,
       defaultValue: DataTypes.NOW,
     },
     user_id: {

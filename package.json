@@ -16,7 +16,9 @@
     "sequelize": "^6.6.5",
     "star-rating.js": "^4.1.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/express": "^5.0.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"

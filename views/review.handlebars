@@ -14,8 +14,6 @@
           <p id="description">Brief Description of the book</p>
           <h2>BCC STAR RATING</h2>
           <h2 class="Stars" style="--rating: {{avgStars}}"></h2>
-
-          {{!-- <h2>ISBN13 = {{ isbn }}</h2> --}}
         </div>
       </div>
     </div>
@@ -28,13 +26,6 @@
             <div class="form-group">
               <textarea id="reviewTitle" name="review" placeholder = "Review Title" cols="40">{{title}}</textarea>
             </div>
-
-
-            {{!-- <div class="form-group">
-              <textarea id="stars" name="review" placeholder = "Stars out of 5" cols="40">{{description}}</textarea>
-            </div> --}}
-
-
             {{!-- This selecter is for use with the star rating npm module --}}
             <div class="form-group px-5">
               <select id="stars" class="star-rating">

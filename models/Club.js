@@ -18,13 +18,6 @@ Club.init(
     description: {
         type: DataTypes.STRING,
     }
-    // book_id: {
-    //     type: DataTypes.INTEGER,
-    //     references: {
-    //         model: 'book',
-    //         key: 'id',
-    //     },
-    // },
    },
    {
        sequelize,
