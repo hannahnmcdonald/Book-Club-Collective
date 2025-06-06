@@ -6,7 +6,6 @@ const registerRoute = Router();
 registerRoute.post('/register', async (req, res) => {
   const { name, email, password } = req.body;
   try {
-    console.log('✅ Register route hit:', { name, email });
     const user = await registerUser({ name, email, password });
     res.status(201).json({ message: 'User registered', user });
   } catch (err) {

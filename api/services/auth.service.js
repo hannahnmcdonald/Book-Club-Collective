@@ -4,7 +4,6 @@ import db from '../../db.js'
 const SALT_ROUNDS = 10;
 
 async function registerUser({ name, email, password }) {
-  console.log('Registering user SERVICE:', { name, email });
   const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
   const [user] = await db('users')
     .insert({ name, email, password: hashedPassword })
