@@ -1,5 +1,5 @@
 # 🚧UNDER CONSTRUCTION🚧
-Fixing app was removed from Heroku after their recent data breach. Will be redployed after DB migration & redeploy
+App was removed from Heroku after their recent data breach. Will be redeployed after DB migration SOON
 
 
 
