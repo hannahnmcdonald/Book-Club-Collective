@@ -1,3 +1,8 @@
+# 🚧UNDER CONSTRUCTION🚧
+Fixing app was removed from Heroku after their recent data breach. Will be redployed after DB migration & redeploy
+
+
+
 # Book-Club-Collective
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
