@@ -10,7 +10,10 @@ loginRoute.post('/login', async (req, res) => {
       if (!user) {
         return res.status(401).json({ message: 'Invalid email or password' });
       }
-      res.status(200).json({ message: 'Login successful', user });
+        req.session.user_id = user.id;
+        req.session.logged_in = true;
+        console.log('User logged in:', user, 'Session:', req.session);
+        res.status(200).json({ message: 'Login successful', user });
     } catch (err) {
       console.error('Login error:', err);
       res.status(500).json({ message: 'Login failed' });
@@ -18,3 +21,8 @@ loginRoute.post('/login', async (req, res) => {
 });
 
 export default loginRoute;
+
+// USE FOR PROTECTED ROUTES:
+// if (!req.session.logged_in) {
+//     return res.redirect('/login');
+//   }
