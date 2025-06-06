@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Review, User, Club } = require("../models");
 const withAuth = require("../utils/auth");
+//  const db = require('../db'); // your initialized Knex instance
 
 router.get("/", async (req, res) => {
   try {

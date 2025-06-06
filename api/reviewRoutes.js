@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Review } = require('../../models');
 const withAuth = require("../../utils/auth");
+// const db = require('../../db'); // your initialized Knex instance
 
 router.post('/', withAuth, async (req, res) => {
   console.log("testing")
