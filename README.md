@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![logo](./public/images/logo2.png)
+![logo](./web/images/logo2.png)
 
 Welcome to Book Club Collective!
 
@@ -47,13 +47,13 @@ Books are a wonderful escape and can take you on deep personal journeys but we h
 
 The basic wireframe structure we created at the beginning of this project.
 
-![Wireframe Home Page](./public/images/BCCWireframe.png)
+![Wireframe Home Page](./web/images/BCCWireframe.png)
 
 ## <a id="screenshot"></a>Screenshot
 
-![Screenshot of App Homepage](/public/images/screenshothome.png)
-![Screenshot of Write a Review Page](/public/images/screenshotreview.png)
-![Screenshot of Search Results Page](/public/images/screenshotsearch.png)
+![Screenshot of App Homepage](/web/images/screenshothome.png)
+![Screenshot of Write a Review Page](/web/images/screenshotreview.png)
+![Screenshot of Search Results Page](/web/images/screenshotsearch.png)
 
 ## <a id="installation"></a>Installation
 
