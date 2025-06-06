@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS novels_db;
-CREATE DATABASE novels_db;
