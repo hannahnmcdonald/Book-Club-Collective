@@ -12,7 +12,6 @@ loginRoute.post('/login', async (req, res) => {
       }
         req.session.user_id = user.id;
         req.session.logged_in = true;
-        console.log('User logged in:', user, 'Session:', req.session);
         res.status(200).json({ message: 'Login successful', user });
     } catch (err) {
       console.error('Login error:', err);

@@ -18,7 +18,6 @@ function bookDataForReview() {
         url: "https://www.googleapis.com/books/v1/volumes?q=" + search,
         dataType: "json",
         success: function(data) {
-            //console.log(data);
 
             const title = data.items[0].volumeInfo.title;
             const author = data.items[0].volumeInfo.authors;

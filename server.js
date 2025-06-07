@@ -12,8 +12,6 @@ import pgPool from './pgPool.js'; // Import the pgPool instance
 
 dotenv.config();
 
-// console.log(db.client.pool, db.client); // Log the pool to verify it's set up correctly
-
 // Setup PostgreSQL session store using existing knex pool
 const PgSession = connectPgSimple(session);
 

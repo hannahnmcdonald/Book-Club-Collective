@@ -26,7 +26,6 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      console.log("success");
       document.location.replace("/profile");
       // rerouted to home
     } else {

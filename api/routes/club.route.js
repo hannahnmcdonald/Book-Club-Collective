@@ -3,7 +3,6 @@ const clubRoute = Router();
 import db from '../../db.js';
 
 clubRoute.get('/clubs', async (req, res) => {
-    console.log('Fetching clubs for user:', req.session.user_id);
     if (!req.session.logged_in) {
         return res.status(401).json({ message: 'Unauthorized' });
     }
@@ -26,16 +25,12 @@ clubRoute.get('/clubs', async (req, res) => {
 });
 
 clubRoute.post('/clubs', async (req, res) => {
-    console.log('Attempting to create a new club');
     if (!req.session.logged_in) {
-        console.log('Unauthorized access attempt to create a club');
         return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    console.log('Creating a new club', req.body);
     const { name, description } = req.body;
 
-    console.log('Creating club:', name, 'by user:', req.session.user_id);
     try {
         // Insert new club into the database
         const newClub = await db('clubs').insert({
