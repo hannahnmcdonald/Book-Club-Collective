@@ -12,7 +12,7 @@ const signupFormHandler = async (event) => {
   const faveQ = document.querySelector("#user-faveQuote").value.trim();
 
   if (name && email && password && (password === confirmPassword)) {
-      const response = await fetch("/api/users", {
+      const response = await fetch("/auth/register", {
       method: "POST",
       body: JSON.stringify({
         name,

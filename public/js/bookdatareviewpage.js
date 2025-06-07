@@ -5,8 +5,6 @@ function bookDataForReview() {
 
     const isbn13 = isbnNumber.dataset.isbn13;
 
-    //console.log("isbn13: ", isbn13);
-
     //Set search term to isbn13
     var search = isbn13;
 
@@ -25,8 +23,6 @@ function bookDataForReview() {
             const title = data.items[0].volumeInfo.title;
             const author = data.items[0].volumeInfo.authors;
             const imgsrc = data.items[0].volumeInfo.imageLinks.smallThumbnail;
-            // This is a larger image
-            // data.items[0].volumeInfo.imageLinks.thumbnail;
             const description = data.items[0].volumeInfo.description;
 
             //Set elements equal to variables

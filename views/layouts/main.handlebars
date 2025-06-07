@@ -32,7 +32,6 @@
     {{!-- This link is for the star rating npm module --}}
     <link href="/css/star-rating.css" rel="stylesheet">
 
-    {{! <link rel="stylesheet" type="text/css" href="../../public/css/style.css" /> }}
   </head>
   <body>
     <nav
@@ -54,9 +53,6 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav navbar-right">
-          <!-- <a class="nav-item nav-link" href="/login">Login</a>
-         <a class="nav-item nav-link" href="/register">Register</a> -->
-          {{!-- <a class="nav-item nav-link" href="/top10">Top 10 List</a> --}}
 
           {{! changed to search book }}
           <a class="nav-item nav-link" href="/searchbook" style = "background-color:#fcf8f3; color: #65625e;  font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Write a Review</a>
@@ -110,18 +106,6 @@
 
 {{!-- This link is added to allow access to the script file with the booksearch code --}}
 <script src="/js/searchbookapi.js"></script>
-
-
-        {{!-- Conditionally render login or logout links --}}
-
-        {{!-- {{#if logged_in}}
-
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
---}}
   
 <!--Render script for logged in users only -->
 {{#if logged_in}}

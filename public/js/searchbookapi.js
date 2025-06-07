@@ -1,7 +1,10 @@
 function bookSearch() {
     var search = document.getElementById('search').value;
 
+    console.log(search);
+
     $.ajax({
+
         url: "https://www.googleapis.com/books/v1/volumes?q=" + search,
         dataType: "json",
         success: function(data) {
@@ -21,20 +24,7 @@ function bookSearch() {
                 let imgsrchttp = data.items[i].volumeInfo.imageLinks.smallThumbnail;
                 let isbn13 = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
                 let rating = data.items[i].volumeInfo.averageRating;
-
-                //The following block is build code not needed in production
-                //var isbnAt0 = data.items[i].volumeInfo.industryIdentifiers[0].identifier;
-                //var isbnAt1 = data.items[i].volumeInfo.industryIdentifiers[1].identifier;
-                // console.log("title: ", title);
-                // if (rating) {
-                //     console.log("rating: ", rating);
-                // };
-                // console.log("isbnAt0: ", isbnAt0);
-                // console.log("isbnAt1: ", isbnAt1);
-                // console.log("isbn13: ", isbn13);
-                // end of build code
                 
-
                 //create the elements
                 var col = document.createElement("div");
                 var card = document.createElement("div");
@@ -71,32 +61,10 @@ function bookSearch() {
                 bookimg.setAttribute('src', imgsrchttp);
                 bookimg.setAttribute('class', 'mt-3');
                 bookauthor.textContent = author;
-            
-                if (rating) {
-                    //starRating.textContent = rating + "/5";
-                } else {
-                    //starRating.textContent = "Be the First To Review";
-                };
-
-
-                //titleButton.textContent = title;
 
                 //appened the new container to the document
                 apiSearchAnchor.append(col);
 
-                //add eventlistner for new button
-
-                //HTML drop of returned data - not formatted
-                // var imageHttp = data.items[i].volumeInfo.imageLinks.smallThumbnail;               
-                // results.innerHTML += "<h2>" + "Title: " + data.items[i].volumeInfo.title + "<h2>"
-                // results.innerHTML += "<h3>" + "Image path: " + data.items[i].volumeInfo.imageLinks.smallThumbnail + "<h3>"
-                // results.innerHTML += "<img src=" + imageHttp + "width=\"300px\" height=\"300px\">";  //"width=\"200px\" height=\"200px\         
-                // results.innerHTML += "<h3>" + "Author: " + data.items[i].volumeInfo.authors + "<h3>"
-                // results.innerHTML += "<h3>" + "Description: " + data.items[i].volumeInfo.description + "<h3>"
-                // results.innerHTML += "<h3>" + "Page Count: " + data.items[i].volumeInfo.pageCount + "<h3>"
-                // results.innerHTML += "<h3>" + "Maturity Rating: " + data.items[i].volumeInfo.maturityRating + "<h3>"
-                // results.innerHTML += "<h3>" + "ISBN: " + data.items[i].volumeInfo.industryIdentifiers[0].type + ": " + data.items[i].volumeInfo.industryIdentifiers[0].identifier + "<h3>"
-                // results.innerHTML += "<h3>" + "ISBN: " + data.items[i].volumeInfo.industryIdentifiers[1].type + ": " + data.items[i].volumeInfo.industryIdentifiers[1].identifier  + "<h3>"
             }
         },
         type: 'GET'
@@ -107,5 +75,5 @@ function bookSearch() {
 const isSearchButton = document.getElementById('bookSearchButton');
 
 if (isSearchButton) {
-document.getElementById('bookSearchButton').addEventListener('click', bookSearch, false)
+    document.getElementById('bookSearchButton').addEventListener('click', bookSearch, false)
 };

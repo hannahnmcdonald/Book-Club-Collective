@@ -13,7 +13,7 @@
           <img id ="imgsource" src="https://via.placeholder.com/150">
           <p id="description">Brief Description of the book</p>
           <h2>BCC STAR RATING</h2>
-          <h2 class="Stars" style="--rating: {{avgStars}}"></h2>
+          <h2 class="Stars" style="--rating: {{averageRating}}"></h2>
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
               {{!-- <p>{{review.stars}}</p> --}}
             </div>
             <div>
-              <p>Created by {{user.name}}</p>
+              <p>Created by {{review.user_name}}</p>
             </div>
           </div>
         {{/each}}

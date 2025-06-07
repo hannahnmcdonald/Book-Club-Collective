@@ -5,7 +5,7 @@ const newFormClubHandler = async (event) => {
     const description = document.querySelector('#clubDescription').value.trim();
     console.log(description)
     if (name && description) {
-      const response = await fetch(`/api/clubs`, {
+      const response = await fetch(`/clubs`, {
         method: 'POST',
         body: JSON.stringify({ name, description }),
         headers: {
@@ -21,26 +21,7 @@ const newFormClubHandler = async (event) => {
     }
   };
   
-  // const delButtonHandler = async (event) => {
-  //   if (event.target.hasAttribute('data-id')) {
-  //     const id = event.target.getAttribute('data-id');
-  
-  //     const response = await fetch(`/api/clubs/${id}`, {
-  //       method: 'DELETE',
-  //     });
-  
-  //     if (response.ok) {
-  //       document.location.replace('/profile');
-  //     } else {
-  //       alert('Failed to delete project');
-  //     }
-  //   }
-  // };
-  
   document
     .querySelector('#blog-form')
     .addEventListener('submit', newFormClubHandler);
   
-  // document
-  //   .querySelector('.project-list')
-  //   .addEventListener('click', delButtonHandler);

@@ -52,4 +52,61 @@ app.use(express.static('images'));
 
 app.use(router);
 
+app.get('/', (req, res) => {
+    res.render('homepage', { logged_in: false }); // or false or whatever your context is
+});
+
+app.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/profile');
+      return;
+    }
+    res.render('login');
+});
+  
+app.get('/searchbook', (req, res) => {
+    res.render('searchbook', {
+      logged_in: req.session.logged_in,
+    });
+});
+  
+app.get('/register', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/profile');
+      return;
+    }
+    res.render('register');
+});
+  
+// app.get('/review/:id', async(req, res) => {
+//     console.log('Review route hit with id:', req.params['id']);
+//     try { 
+//         const isbn13 = req.params['id'];
+//         const reviewData = await Review.findAll({ where: {
+//         isbn:isbn13
+//       }, 
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//                 }
+//           ]
+//       })
+//       let reviewTotal = 0;
+//       const reviews = reviewData.map((review) => {
+//         const reviewSerializedData = review.get({ plain:true});
+//         const rating = reviewSerializedData.stars;
+//         reviewTotal += rating;
+//         return reviewSerializedData;
+//       });
+//       const avg = reviewTotal/reviewData.length;
+//       res.render('review', {
+//         isbn: isbn13, reviews:reviews, avgStars: avg,
+//         logged_in: req.session.logged_in
+//       });
+//     } catch (err) {
+//       console.log(err)
+//     }
+// });
+
 app.listen(PORT, () => console.log('Now listening om port ' + PORT));

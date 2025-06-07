@@ -21,8 +21,3 @@ loginRoute.post('/login', async (req, res) => {
 });
 
 export default loginRoute;
-
-// USE FOR PROTECTED ROUTES:
-// if (!req.session.logged_in) {
-//     return res.redirect('/login');
-//   }

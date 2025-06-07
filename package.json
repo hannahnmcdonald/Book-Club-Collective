@@ -18,7 +18,8 @@
   },
   "devDependencies": {
     "@types/connect-pg-simple": "^7.0.3",
-    "@types/express": "^5.0.2"
+    "@types/express": "^5.0.2",
+    "@types/express-handlebars": "^6.0.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
