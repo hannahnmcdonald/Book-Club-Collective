@@ -4,6 +4,7 @@ import { registerUser } from '../services/auth.service.js';
 const registerRoute = Router();
 
 registerRoute.post('/register', async (req, res) => {
+  console.log('Register request body:', req.body);
   const { name, email, password } = req.body;
   try {
     const user = await registerUser({ name, email, password });
