@@ -18,6 +18,14 @@ const config = {
       directory: './db/migrations',
     },
   },
+  production: {
+    client: 'pg',
+    connection: process.env.DB_RAILWAY_URL, 
+    pool: { min: 2, max: 10 },
+    migrations: {
+      directory: './db/migrations', 
+    },
+  },
 };
 
 export default config;
