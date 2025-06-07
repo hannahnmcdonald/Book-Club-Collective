@@ -1,7 +1,7 @@
 /**
  * @param {import('knex')} knex
  */
-exports.up = async function(knex) {
+export async function up(knex) {
     return knex.schema.alterTable('clubs', (table) => {
       table.string('description').nullable();
     });
@@ -10,7 +10,7 @@ exports.up = async function(knex) {
   /**
    * @param {import('knex')} knex
    */
-  exports.down = async function(knex) {
+  export async function down(knex) {
     return knex.schema.alterTable('clubs', (table) => {
       table.dropColumn('description');
     });

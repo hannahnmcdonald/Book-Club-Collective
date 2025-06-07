@@ -1,7 +1,7 @@
 /**
  * @param {import('knex')} knex
  */
-exports.up = async function(knex) {
+export async function up(knex) {
     return knex.schema.createTable('club_comments', (table) => {
       table.increments('id').primary();
       table
@@ -24,7 +24,7 @@ exports.up = async function(knex) {
   /**
    * @param {import('knex')} knex
    */
-  exports.down = async function(knex) {
+  export async function down(knex) {
     return knex.schema.dropTableIfExists('club_comments');
   };
   

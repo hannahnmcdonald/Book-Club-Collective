@@ -1,7 +1,7 @@
 /**
  * @param {import('knex')} knex
  */
-exports.up = async function(knex) {
+export async function up(knex) {
   
     // Create reviews table
     await knex.schema.createTable('reviews', (table) => {
@@ -23,7 +23,7 @@ exports.up = async function(knex) {
   /**
    * @param {import('knex')} knex
    */
-  exports.down = async function(knex) {
+  export async function down(knex) {
     await knex.schema.dropTableIfExists('clubs');
     await knex.schema.dropTableIfExists('reviews');
   };

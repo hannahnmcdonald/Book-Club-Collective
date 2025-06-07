@@ -1,7 +1,7 @@
 /**
  * @param {import('knex')} knex
  */
-exports.up = async function(knex) {
+export async function up(knex) {
     return knex.schema.createTable('books', (table) => {
       table.increments('id').primary();
       table.string('title').notNullable();
@@ -16,7 +16,7 @@ exports.up = async function(knex) {
   /**
    * @param {import('knex')} knex
    */
-  exports.down = async function(knex) {
+  export async function down(knex) {
     return knex.schema.dropTableIfExists('books');
   };
   
