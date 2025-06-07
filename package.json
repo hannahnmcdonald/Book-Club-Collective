@@ -26,6 +26,9 @@
     "start": "node server.js"
   },
   "type": "module",
+  "engines": {
+  "node": "18.x"
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stevenslade/Book-Club-Collective.git"
