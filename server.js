@@ -49,11 +49,13 @@ app.use(
 console.log('ENV:', process.env.NODE_ENV);
 console.log('Knex Config:', knexConfig[process.env.NODE_ENV]);
 
+if (process.env.NODE_ENV === 'production') {
 db.migrate.latest().then(() => {
     console.log('✅ Database migrations completed successfully');
 }).catch((err) => {
     console.error('❌ Error running database migrations:', err);
 });
+};
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
