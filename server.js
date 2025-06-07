@@ -10,6 +10,7 @@ import connectPgSimple from 'connect-pg-simple';
 import dotenv from 'dotenv';
 import pgPool from './pgPool.js'; // Import the pgPool instance
 import db from './db.js';
+import knexConfig from './knexfile.js';
 
 dotenv.config();
 
