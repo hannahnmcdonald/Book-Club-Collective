@@ -9,6 +9,7 @@ import session from 'express-session';
 import connectPgSimple from 'connect-pg-simple';
 import dotenv from 'dotenv';
 import pgPool from './pgPool.js'; // Import the pgPool instance
+import db from './db.js';
 
 dotenv.config();
 
@@ -43,6 +44,12 @@ app.use(
       },
     })
 );
+
+db.migrate.latest().then(() => {
+    console.log('✅ Database migrations completed successfully');
+}).catch((err) => {
+    console.error('❌ Error running database migrations:', err);
+});
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
