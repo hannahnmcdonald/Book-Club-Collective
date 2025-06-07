@@ -1,6 +1,8 @@
-# 🚧UNDER CONSTRUCTION🚧
-App was removed from Heroku after their recent data breach. Will be redeployed after DB migration SOON
+# 🚧FORKED & REDEPLOYED 6/2025🚧
 
+Due to issues with Heroku & their data breach in 2023, this deployment was lost. Forked and recovered in June 2025 using Railway deployment. Database migrated to Postgres.
+
+New URL: https://book-club-collective-production.up.railway.app/
 
 
 # Book-Club-Collective
@@ -38,7 +40,7 @@ Books are a wonderful escape and can take you on deep personal journeys but we h
 
 ## <a id="description"></a>Description
 
-- Book Club Collective is a full stack application where users can create accounts search for books using Google's Book API as well leave reviews and join book clubs. Book Club Collective uses a folder structure that matches the MVC paradigm as well as Node.js and Express to create a RESTful API. Book Club Collective uses MySQL and Sequelize for the database and [npm star-rating.js](https://www.npmjs.com/package/star-rating.js) to create a star rating system out of 5 for the book reviews and then averages them out per book.
+- Book Club Collective is a full stack application where users can create accounts search for books using Google's Book API as well leave reviews and join book clubs. Book Club Collective uses a folder structure that matches the MVC paradigm as well as Node.js and Express to create a RESTful API. Book Club Collective uses ~~MySQL~~ Postgres and ~~Sequelize~~ knex for the database and [npm star-rating.js](https://www.npmjs.com/package/star-rating.js) to create a star rating system out of 5 for the book reviews and then averages them out per book.
 
 ## <a id="technologies"></a>Technologies and Skills Demonstrated
 
@@ -46,7 +48,7 @@ Books are a wonderful escape and can take you on deep personal journeys but we h
 * Google Books API fetch
 * MVC Paradigm 
 * Github Project Management using SCRUM Methodology
-* bcrypt, conect-session-sequelize, dotenv, express, mysql, sequelize, star-rating.js
+* bcrypt, ~~conect-session-sequelize~~, dotenv, express, ~~mysql~~, ~~sequelize~~, star-rating.js, Knex, Postgres
 
 ## <a id="wireframe"></a>Wireframe
 
@@ -62,7 +64,7 @@ The basic wireframe structure we created at the beginning of this project.
 
 ## <a id="installation"></a>Installation
 
-- Run the following to install dependancies, the following will be installed, express, mysql2, bcrypt, dotenv, sequelize, connect-session-sequelize, express-session, express-handlebars
+- Run the following to install dependancies, the following will be installed, express, ~~mysql2~~, bcrypt, dotenv, ~~sequelize~~, ~~connect-session-sequelize~~, express-session, express-handlebars, postgres, knex, connect-pg-simple,
 
 ```
 npm i

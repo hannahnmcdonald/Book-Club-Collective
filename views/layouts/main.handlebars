@@ -55,12 +55,12 @@
         <div class="navbar-nav navbar-right">
 
           {{! changed to search book }}
-          <a class="nav-item nav-link" href="/searchbook" style = "background-color:#fcf8f3; color: #65625e;  font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Write a Review</a>
-          <a class="nav-item nav-link" href="/clubs" style = "background-color:#fcf8f3; color: #65625e; font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Join a Book Club</a>
+          <a class="nav-item nav-link" href="/searchbook" style = "background-color:#fcf8f3; color: #65625e;  font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Explore Books</a>
 
           {{#if logged_in}}
+                    <a class="nav-item nav-link" href="/clubs" style = "background-color:#fcf8f3; color: #65625e; font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Join a Book Club</a>
+                                <a class="nav-item nav-link" href="/profile" style = "background-color:#fcf8f3; color: #65625e; font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Profile</a>
             <button id="logout" class="btn btn-link py-0" style = "background-color:#fcf8f3; color: #65625e; margin-bottom: 20px;  font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Logout</button>
-            <a class="nav-item nav-link" href="/profile" style = "background-color:#fcf8f3; color: #65625e; font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Profile</a>
             {{!-- <a class="nav-item nav-link" id="logout" href="">Logout</a> --}}
           {{else}}
             <a class="nav-item nav-link" href="/login" style = "background-color:#fcf8f3; color: #65625e; font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Login</a>

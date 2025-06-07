@@ -4,25 +4,25 @@ import db from '../../db.js';
 
 clubRoute.get('/clubs', async (req, res) => {
     if (!req.session.logged_in) {
-        return res.status(401).json({ message: 'Unauthorized' });
+      return res.status(401).json({ message: 'Unauthorized' });
     }
-    // Fetch all clubs from the database
+  
     try {
-        const clubs = await db('clubs')
-            .select('*');
-
-        res.render('clubs', {
-            clubs,
-            logged_in: req.session.logged_in || false,
-            user_id: req.session.user_id || null,
-            user_name: req.session.user_name || null,
-        });
+      const clubs = await db('clubs')
+        .join('users', 'clubs.user_id', 'users.id')
+        .select('clubs.*', 'users.name as user_name'); 
+  
+      res.render('clubs', {
+        clubs,
+        logged_in: req.session.logged_in || false,
+        user_id: req.session.user_id || null,
+        user_name: req.session.user_name || null,
+      });
     } catch (err) {
-        console.error('Error fetching clubs:', err);
-        res.status(500).json({ message: 'Internal server error' }); 
-    };
-
-});
+      console.error('Error fetching clubs:', err);
+      res.status(500).json({ message: 'Internal server error' });
+    }
+  });
 
 clubRoute.post('/clubs', async (req, res) => {
     if (!req.session.logged_in) {
