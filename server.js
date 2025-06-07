@@ -77,36 +77,5 @@ app.get('/register', (req, res) => {
     }
     res.render('register');
 });
-  
-// app.get('/review/:id', async(req, res) => {
-//     console.log('Review route hit with id:', req.params['id']);
-//     try { 
-//         const isbn13 = req.params['id'];
-//         const reviewData = await Review.findAll({ where: {
-//         isbn:isbn13
-//       }, 
-//       include: [
-//         {
-//           model: User,
-//           attributes: ['name'],
-//                 }
-//           ]
-//       })
-//       let reviewTotal = 0;
-//       const reviews = reviewData.map((review) => {
-//         const reviewSerializedData = review.get({ plain:true});
-//         const rating = reviewSerializedData.stars;
-//         reviewTotal += rating;
-//         return reviewSerializedData;
-//       });
-//       const avg = reviewTotal/reviewData.length;
-//       res.render('review', {
-//         isbn: isbn13, reviews:reviews, avgStars: avg,
-//         logged_in: req.session.logged_in
-//       });
-//     } catch (err) {
-//       console.log(err)
-//     }
-// });
 
 app.listen(PORT, () => console.log('Now listening om port ' + PORT));

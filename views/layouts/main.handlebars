@@ -69,14 +69,14 @@
           <a class="nav-item nav-link" href="/register"style = "background-color:#fcf8f3; color: #65625e;  font-weight: 100; font-size: 16px; font-family: farm-new, sans-serif;">Register</a>
           <div class="login-container">
 
-            <form>
-              <input type="text" placeholder="Book Search" name="bookSearch" />
-              <button type="submit" class="btn"><i
-                  class="fa fa-search"
-                  aria-hidden="true"
-                ></i></button>
+<form action="/searchbook" method="GET" id="bookSearchForm">
+  <input type="text" name="q" id="search" placeholder="Book Search" />
+  <button type="submit" class="btn">
+    <i class="fa fa-search" aria-hidden="true"></i>
+  </button>
+</form>
 
-            </form>
+
           </div>
         </div>
       </div>
