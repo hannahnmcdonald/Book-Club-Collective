@@ -9,8 +9,8 @@ import session from 'express-session';
 import connectPgSimple from 'connect-pg-simple';
 import dotenv from 'dotenv';
 import pgPool from './pgPool.js'; // Import the pgPool instance
-import db from './db.js';
-import knexConfig from './knexfile.js';
+// import db from './db.js';
+// import knexConfig from './knexfile.js';
 
 dotenv.config();
 
@@ -46,16 +46,16 @@ app.use(
     })
 );
 
-console.log('ENV:', process.env.NODE_ENV);
-console.log('Knex Config:', knexConfig[process.env.NODE_ENV]);
+// console.log('ENV:', process.env.NODE_ENV);
+// console.log('Knex Config:', knexConfig[process.env.NODE_ENV]);
 
-if (process.env.NODE_ENV === 'production') {
-db.migrate.latest().then(() => {
-    console.log('✅ Database migrations completed successfully');
-}).catch((err) => {
-    console.error('❌ Error running database migrations:', err);
-});
-};
+// if (process.env.NODE_ENV === 'production') {
+// db.migrate.latest().then(() => {
+//     console.log('✅ Database migrations completed successfully');
+// }).catch((err) => {
+//     console.error('❌ Error running database migrations:', err);
+// });
+// };
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
