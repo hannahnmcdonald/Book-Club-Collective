@@ -20,7 +20,7 @@ const config = {
   },
   production: {
     client: 'pg',
-    connection: process.env.DB_RAILWAY_URL, 
+    connection: process.env.DATABASE_URL || process.env.DB_RAILWAY_URL, 
     pool: { min: 2, max: 10 },
     migrations: {
       directory: './db/migrations', 
