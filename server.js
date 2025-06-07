@@ -45,6 +45,9 @@ app.use(
     })
 );
 
+console.log('ENV:', process.env.NODE_ENV);
+console.log('Knex Config:', knexConfig[process.env.NODE_ENV]);
+
 db.migrate.latest().then(() => {
     console.log('✅ Database migrations completed successfully');
 }).catch((err) => {
