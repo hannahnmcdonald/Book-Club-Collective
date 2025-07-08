@@ -1,4 +1,4 @@
-# 🚧FORKED & REDEPLOYED 6/2025🚧
+# ℹ️ REDEPLOYED 6/2025 ℹ️
 
 Due to issues with Heroku & their data breach in 2023, this deployment was lost. Forked and recovered in June 2025 using Railway deployment. Database migrated to Postgres.
 
